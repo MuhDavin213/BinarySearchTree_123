@@ -9,8 +9,16 @@ namespace BinarySearchTree
     class Program
     {
         /*
-         * a node class 
+         a node class cons
          */
+        class node
+        {
+            public string info;
+            public node lchild;
+            public node rChild;
+
+            //constructor for the code clas
+        }
         static void Main(string[] args)
         {
         }
