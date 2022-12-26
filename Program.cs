@@ -38,9 +38,65 @@ namespace BinarySearchTree
             }
             else/*if the specified node is not present*/
             {
-
+                tmp = new node(element, null, null);
+                if(parent == null)
+                {
+                    ROOT = tmp;
+                }
+                else if (string.Compare(element,parent.info) < 0)
+                {
+                    if (string.Compare(element, parent.info) < 0)
+                        parent.lchild = tmp;
+                }
+                else
+                {
+                    parent.rChild = tmp;
+                }
             }
         }
+        public void find(string element, ref node parent, ref node currentnode)
+        {
+            currentnode = ROOT;
+            parent = null;
+            while ((currentnode != null) && (currentnode.info != element))
+            {
+                parent = currentnode;
+                if (string.Compare(element, currentnode.info) < 0)
+                    currentnode = currentnode.lchild;
+                else
+                    currentnode = currentnode.rChild;
+            }
+        }
+        public void inorder(node ptr)
+        {
+            if (ROOT == null)
+            {
+                Console.WriteLine("Tree is empty");
+                return;
+            }
+            if (ptr != null)
+            {
+                inorder(ptr.lchild);
+                Console.WriteLine(ptr.info +"");
+                inorder(ptr.rChild);
+            }
+        }
+        public void preorder(node ptr)
+        {
+            if(ROOT == null)
+            {
+                Console.WriteLine("tree is empty");
+                return;
+            }
+            if(ptr != null)
+            {
+                Console.WriteLine(ptr.info + "");
+                preorder(ptr.lchild);
+                preorder(ptr.rChild);
+            }
+        }
+        public void Postorder(node ptr)
+        {}
     }
     class Program
     {
