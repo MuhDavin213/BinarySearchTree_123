@@ -9,6 +9,7 @@ namespace BinarySearchTree
     class Program
     {
         /*
+         * a node class 
          */
         static void Main(string[] args)
         {
