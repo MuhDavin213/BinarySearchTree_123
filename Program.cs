@@ -69,17 +69,6 @@ namespace BinarySearchTree
         }
         public void inorder(node ptr)
         {
-            if (ROOT == null)
-            {
-                Console.WriteLine("Tree is empty");
-                return;
-            }
-            if (ptr != null)
-            {
-                inorder(ptr.lchild);
-                Console.WriteLine(ptr.info +"");
-                inorder(ptr.rChild);
-            }
         }
         public void preorder(node ptr)
         {
@@ -113,12 +102,54 @@ namespace BinarySearchTree
     }
     class Program
     {
-        class Binary
-        {
-
-        }
         static void Main(string[] args)
         {
+            BinaryTree x = new BinaryTree();
+            while (true)
+            {
+                Console.WriteLine("\nMenu");
+                Console.WriteLine("1. Implement insert operation");
+                Console.WriteLine("2. Perform inorder Traversal");
+                Console.WriteLine("3. Perform Preorder Traversal");
+                Console.WriteLine("4. Perform Postorder Traversal");
+                Console.WriteLine("5. Exit");
+                Console.Write("\nEnter your choice (1-5) : ");
+                char ch = Convert.ToChar(Console.ReadLine());
+                Console.WriteLine();
+                switch (ch)
+                {
+                    case '1':
+                        {
+                            Console.WriteLine("enter a word:");
+                            string word = Console.ReadLine();
+                            x.insert(word);
+                        }
+                        break;
+                    case '2':
+                        {
+                            x.inorder(x.ROOT);
+                        }
+                        break;
+                    case '3':
+                        {
+                            x.preorder(x.ROOT);
+                        }
+                        break;
+                    case '4':
+                        {
+                            x.Postorder(x.ROOT); ;
+                        }
+                        break;
+                    case '5':
+                        return;
+                    default:
+                        {
+                            Console.WriteLine("Check Invalid option");
+                            break;
+                        }
+
+                }
+            }
         }
     }
 }
