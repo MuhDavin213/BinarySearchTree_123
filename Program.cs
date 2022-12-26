@@ -18,6 +18,16 @@ namespace BinarySearchTree
             public node rChild;
 
             //constructor for the code clas
+            public node(string i, node l, node r)
+            {
+                info = i;
+                lchild = l;
+                rChild = r;
+            }
+        }
+        class Binary
+        {
+
         }
         static void Main(string[] args)
         {
